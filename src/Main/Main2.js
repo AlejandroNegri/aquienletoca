@@ -3,7 +3,7 @@ import { Table, Input, Button, Space } from "antd";
 import Highlighter from "react-highlight-words";
 import { SearchOutlined } from "@ant-design/icons";
 
-function Main() {
+function Main2() {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState(0);
   let searchInput = useRef();
@@ -171,4 +171,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Main2;
