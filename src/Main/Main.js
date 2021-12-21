@@ -2,34 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Table, Modal } from "antd";
 
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-
-import { getDatabase, ref, set } from "firebase/database";
-
-
-
-
-
-
 
 function Main() {
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDLoFO1QGfgkSfxdsp61UvOWz8Fn1IuqfQ",
-    authDomain: "aquienletocadb.firebaseapp.com",
-    projectId: "aquienletocadb",
-    storageBucket: "aquienletocadb.appspot.com",
-    messagingSenderId: "694316714292",
-    appId: "1:694316714292:web:df183ccce10c275d1bfd61",
-    measurementId: "G-BQM2NQ6DJM"
-  };
-  
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  
+ 
   const [modalVisible, setModalVisible] = useState(false);
   const [jugadorSeleccionado, setJugadorSeleccionado] = useState({});
   const [listaJugadoresMain, setListaJugadoresMain] = useState([
@@ -76,23 +52,23 @@ function Main() {
   }, []);
 
   async function getCities() {
-    const jugadores = collection(db, 'jugadores');
+   /* const jugadores = collection(db, 'jugadores');
     const citySnapshot = await getDocs(jugadores);
     const cityList = citySnapshot.docs.map(doc => doc.data());
 
     console.log("jugadores", cityList);
 
-    setListaJugadoresMain(cityList);
+    setListaJugadoresMain(cityList);*/
   }
 
 
 function writeUserData() {
-  console.log("entra");
+ /* console.log("entra");
   const db = getDatabase();
   set(ref(db, '/jugadores/BRzjNjVz285JsO2kYCFE'), {
     nombre: "pepito",
     pjsl: 5,
-  });
+  });*/
 }
 
   return (
